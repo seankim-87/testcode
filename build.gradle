@@ -1,0 +1,22 @@
+plugins {
+	// 생략
+	id 'com.google.cloud.tools.jib' version '1.8.0'
+}
+
+// 생략
+
+jib {
+	from {
+		image = "openjdk:8-alpine"
+	}
+	to {
+		image = "ECR Repository URI"
+		tags = '0.0.1-SNAPSHOT'
+	}
+	container {
+		// Set JVM options.
+		jvmFlags = ['-Dspring.profiles.active=dev', '-XX:+UseContainerSupport', '-Dserver.port=8080', '-Dfile.encoding=UTF-8']
+		// Expose different port.
+		ports = ['8080']
+	}
+}
