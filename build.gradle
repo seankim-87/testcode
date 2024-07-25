@@ -10,7 +10,7 @@ jib {
 		image = "openjdk:8-alpine"
 	}
 	to {
-		image = "ECR Repository URI"
+		image = "252900486417.dkr.ecr.ap-northeast-2.amazonaws.com/seantest11"
 		tags = '0.0.1-SNAPSHOT'
 	}
 	container {
